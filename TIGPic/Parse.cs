@@ -74,12 +74,8 @@ namespace WindowsFormsApplication1 {
             return m.Groups[1].Value;
         }
 
-        public static readonly ParseBase TwitPic = new ParseBase(
-            "http://twitpic",
-            "<meta name=\"twitter:image\" value=\"(?<1>.*)\" />"
-            );
         public static readonly ParseBase Instagram = new ParseBase(
-            "http://instagr.am",
+            "http://instagr.am/",
             "<img class=\"photo\" src=\"(?<1>.*)\" />"
             );
         public static readonly ParseBase MovaPic = new ParseBase(
@@ -87,8 +83,20 @@ namespace WindowsFormsApplication1 {
             "(?<1>http://image.movapic.com/pic/m_[^\"]*)\""
             );
         public static readonly ParseBase Twipple = new ParseBase(
-            "http://p.twipple.jp",
+            "http://p.twipple.jp/",
             "(?<1>http://p.twpl.jp/show/orig/[^\"]*)\""
+            );
+        public static readonly ParseBase TwitPic = new ParseBase(
+            "http://twitpic.com/",
+            "<meta name=\"twitter:image\" value=\"(?<1>.*)\" />"
+            );
+        public static readonly ParseBase ViaMe = new ParseBase(
+            "http://via.me/",
+            "(?<1>http://img.viame-cdn.com/photos/[^\"]*)\""
+            );
+        public static readonly ParseBase Yfrog = new ParseBase(
+            "http://yfrog.com/",
+            "<meta property=\"og:image\" content=\"(?<1>.*)\" />"
             );
     }
 }
