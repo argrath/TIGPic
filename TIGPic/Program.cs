@@ -17,7 +17,9 @@ namespace WindowsFormsApplication1 {
             Main m = new Main();
             Parse p = new Parse(args);
             m.URL = p.ImageURL;
-            Application.Run(m);
+            if (m.URL != null) {
+                Application.Run(m);
+            }
         }
     }
 }
