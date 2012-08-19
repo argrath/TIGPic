@@ -74,9 +74,21 @@ namespace WindowsFormsApplication1 {
             return m.Groups[1].Value;
         }
 
+        public static readonly ParseBase HatenaFotolife = new ParseBase(
+            "http://f.hatena.ne.jp/",
+            "<img src=\"(?<1>.*)\".*class=\"foto\".*/>"
+            );
+        public static readonly ParseBase Imgur = new ParseBase(
+            "http://imgur.com/",
+            "<meta name=\"twitter:image\" value=\"(?<1>.*)\" />"
+            );
         public static readonly ParseBase Instagram = new ParseBase(
             "http://instagr.am/",
             "<img class=\"photo\" src=\"(?<1>.*)\" />"
+            );
+        public static readonly ParseBase Lockerz = new ParseBase(
+            "http://lockerz.com/",
+            "<meta property=\"og:image\" content=\"(?<1>.*)\" />"
             );
         public static readonly ParseBase MovaPic = new ParseBase(
             "http://movapic.com/",
