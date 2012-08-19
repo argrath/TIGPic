@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.Net;
+using System.IO;
+
+
 namespace WindowsFormsApplication1 {
     public partial class Main : Form {
         public string URL {
@@ -14,19 +18,55 @@ namespace WindowsFormsApplication1 {
             set;
         }
 
+        private Image NowImage;
+
         public Main() {
             InitializeComponent();
         }
 
         private void Main_Load(object sender, EventArgs e) {
-            mainPic.WaitOnLoad = true;
-            mainPic.ImageLocation = URL;
-            Size s = mainPic.Image.Size;
-            mainPic.Height = s.Height;
-            mainPic.Width = s.Width;
-            this.Height = s.Height + 24;
-            this.Width = s.Width + 16;
+            {
+                WebClient wc = new WebClient();
+                using (Stream st = wc.OpenRead(URL)) {
+                    NowImage = Image.FromStream(st);
+                }
+            }
+            mainPic.Image = NowImage;
+
+            Size s = NowImage.Size;
+
+            {
+                Size maxSize = SystemInformation.MaxWindowTrackSize;
+                int paddingWidth = this.Width - this.ClientSize.Width;
+                int paddingHeight = this.Height - this.ClientSize.Height;
+                maxSize.Width -= paddingWidth;
+                maxSize.Height -= paddingHeight;
+
+                if(s.Width > maxSize.Width){
+                    s.Height = s.Height * maxSize.Width / s.Width;
+                    s.Width = maxSize.Width;
+                }
+                if (s.Height > maxSize.Height) {
+                    s.Width = s.Width * maxSize.Height / s.Height;
+                    s.Height = maxSize.Height;
+                }
+            }
+
+            this.ClientSize = new Size(s.Width, s.Height);
             this.Text = URL;
+            ResizeSub();
+        }
+
+        private void Main_Resize(object sender, EventArgs e) {
+//            ResizeSub();
+        }
+
+        private void ResizeSub() {
+            mainPic.Size = this.ClientSize;
+        }
+
+        private void Main_SizeChanged(object sender, EventArgs e) {
+            ResizeSub();
         }
     }
 }

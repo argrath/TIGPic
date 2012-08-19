@@ -29,9 +29,10 @@
             // 
             // mainPic
             // 
-            this.mainPic.Location = new System.Drawing.Point(2, 0);
+            this.mainPic.Location = new System.Drawing.Point(0, 0);
             this.mainPic.Name = "mainPic";
             this.mainPic.Size = new System.Drawing.Size(289, 271);
+            this.mainPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mainPic.TabIndex = 0;
             this.mainPic.TabStop = false;
             // 
@@ -44,6 +45,8 @@
             this.Name = "Main";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.SizeChanged += new System.EventHandler(this.Main_SizeChanged);
+            this.Resize += new System.EventHandler(this.Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.mainPic)).EndInit();
             this.ResumeLayout(false);
 
