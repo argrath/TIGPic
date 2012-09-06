@@ -51,6 +51,7 @@ namespace WindowsFormsApplication1 {
     }
 
     public class ParseBase {
+        private const string OG_IMAGE = "<meta property=\"og:image\" content=\"(?<1>.*)\"";
         public static List<ParseBase> SiteList = new List<ParseBase>();
 
         private string ID;
@@ -88,7 +89,7 @@ namespace WindowsFormsApplication1 {
             );
         public static readonly ParseBase Lockerz = new ParseBase(
             "http://lockerz.com/",
-            "<meta property=\"og:image\" content=\"(?<1>.*)\" />"
+            OG_IMAGE
             );
         public static readonly ParseBase MovaPic = new ParseBase(
             "http://movapic.com/",
@@ -108,7 +109,7 @@ namespace WindowsFormsApplication1 {
             );
         public static readonly ParseBase Yfrog = new ParseBase(
             "http://yfrog.com/",
-            "<meta property=\"og:image\" content=\"(?<1>.*)\" />"
+            OG_IMAGE
             );
     }
 }
