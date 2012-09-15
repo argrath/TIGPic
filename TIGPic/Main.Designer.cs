@@ -42,10 +42,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
             this.Controls.Add(this.mainPic);
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Main_Load);
-            this.SizeChanged += new System.EventHandler(this.Main_SizeChanged);
             this.Resize += new System.EventHandler(this.Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.mainPic)).EndInit();
             this.ResumeLayout(false);
