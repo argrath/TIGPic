@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1 {
             );
         public static readonly ParseBase Instagram = new ParseBase(
             "http://instagr.am/",
-            "<img class=\"photo\" src=\"(?<1>.*)\" />"
+            "<img class=\"photo\" src=\"(?<1>.*)\" alt="
             );
         public static readonly ParseBase Lockerz = new ParseBase(
             "http://lockerz.com/",
