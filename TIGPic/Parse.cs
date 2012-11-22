@@ -95,6 +95,10 @@ namespace WindowsFormsApplication1 {
             "http://movapic.com/",
             "(?<1>http://image.movapic.com/pic/m_[^\"]*)\""
             );
+        public static readonly ParseBase Photozou = new ParseBase(
+            "http://photozou.jp/",
+            OG_IMAGE
+            );
         public static readonly ParseBase Twipple = new ParseBase(
             "http://p.twipple.jp/",
             "(?<1>http://p.twpl.jp/show/orig/[^\"]*)\""
