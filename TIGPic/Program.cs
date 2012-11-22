@@ -19,6 +19,8 @@ namespace WindowsFormsApplication1 {
             m.URL = p.ImageURL;
             if (m.URL != null) {
                 Application.Run(m);
+            } else {
+                MessageBox.Show("Not found: " + args);
             }
         }
     }
