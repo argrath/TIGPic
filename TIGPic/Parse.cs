@@ -107,6 +107,10 @@ namespace WindowsFormsApplication1 {
             "http://twitpic.com/",
             "<meta name=\"twitter:image\" value=\"(?<1>.*)\" />"
             );
+        public static readonly ParseBase Twitter = new ParseBase(
+            "http://twitter.com/",
+            "(?<1>http://pbs.twimg.com/.*:large)\""
+            );
         public static readonly ParseBase ViaMe = new ParseBase(
             "http://via.me/",
             "(?<1>http://img.viame-cdn.com/photos/[^\"]*)\""
