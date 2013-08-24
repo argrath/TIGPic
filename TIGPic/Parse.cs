@@ -83,9 +83,13 @@ namespace WindowsFormsApplication1 {
             "http://imgur.com/",
             "<meta name=\"twitter:image\" value=\"(?<1>.*)\" />"
             );
-        public static readonly ParseBase Instagram = new ParseBase(
+        public static readonly ParseBase Instagr = new ParseBase(
             "http://instagr.am/",
-            "<img class=\"photo\" src=\"(?<1>.*)\" alt="
+            OG_IMAGE
+            );
+        public static readonly ParseBase Instagram = new ParseBase(
+            "http://instagram.com/",
+            OG_IMAGE
             );
         public static readonly ParseBase Lockerz = new ParseBase(
             "http://lockerz.com/",
