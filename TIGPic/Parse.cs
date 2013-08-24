@@ -113,7 +113,7 @@ namespace WindowsFormsApplication1 {
             );
         public static readonly ParseBase Twitter = new ParseBase(
             "http://twitter.com/",
-            "(?<1>https?://pbs.twimg.com/.*:large)\""
+            "(?<1>https?://pbs.twimg.com/[^\"]*:large)\""
             );
         public static readonly ParseBase ViaMe = new ParseBase(
             "http://via.me/",
